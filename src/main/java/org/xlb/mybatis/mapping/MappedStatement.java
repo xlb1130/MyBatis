@@ -13,12 +13,18 @@ import java.util.*;
 public final class MappedStatement {
 
   private final String sql;
+  private final String sqlType;
+  private final String paramType;
+  private final String resultType;
   private Object param;
   private List<String> colList;
   private List<String> paramList;
 
-  public MappedStatement(String sql){
+  public MappedStatement(String sql,String sqlType,String paramType,String resultType){
     this.sql = sql;
+    this.sqlType = sqlType;
+    this.paramType = paramType;
+    this.resultType = resultType;
   }
 
   public String getSql() {

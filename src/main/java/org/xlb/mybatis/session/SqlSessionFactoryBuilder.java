@@ -25,6 +25,7 @@ public class SqlSessionFactoryBuilder {
             // 创建 session 工厂
             return build(parser.parse());
         } catch (Exception e) {
+        	e.printStackTrace();
             throw new Exception("SqlSessionFactory 创建失败");
         } finally{
             //关闭流等资源

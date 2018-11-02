@@ -1,11 +1,5 @@
 package org.xlb.mybatis;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import org.xlb.mybatis.session.SqlSession;
-import org.xlb.mybatis.session.SqlSessionFactory;
-import org.xlb.mybatis.session.SqlSessionFactoryBuilder;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -13,19 +7,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import junit.framework.TestCase;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.xlb.mybatis.session.SqlSession;
+import org.xlb.mybatis.session.SqlSessionFactory;
+import org.xlb.mybatis.session.SqlSessionFactoryBuilder;
+
 /**
  * @Auther: Jack Xie
  * @Date: 2018/11/2/002 11:43
  * @Description:
- */
-public class MybatisTest {
+ */ 
+public class MybatisTest extends TestCase{
     private static SqlSessionFactory sqlSessionFactory;
+    
+    public static void main(String args[]) throws Exception{
+    	setup();
+    	new MybatisTest().shouldFailForWrongNamespace();
+    }
 
     @BeforeClass
     public static void setup() throws Exception {
-        InputStream inputStream = new FileInputStream(new File("E:\\test.txt"));
+        InputStream inputStream = new FileInputStream(new File("../../TestMapper.xml"));
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
     }
 
     @Test

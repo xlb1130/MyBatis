@@ -17,7 +17,7 @@ public class JdbcConnectionFactory {
     //mysql驱动包名
     private static final String DRIVER_NAME = "com.mysql.jdbc.Driver";
     //数据库连接地址
-    private static final String URL = "jdbc:mysql://localhost:3306/qhq_manager";
+    private static final String URL = "jdbc:mysql://localhost:3306/irrigation";
     //用户名
     private static final String USER_NAME = "root";
     //密码

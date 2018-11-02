@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappers  namespace="org.xlb.mybatis.TestMapper">
+	<select id="select" parameterType="String" resultType="String">
+		select * from pro_channel_info where del_flag = ${del_flag}
+	</select>
+</mappers>
